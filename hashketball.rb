@@ -259,7 +259,6 @@ def winning_team #returns the NAME of team with the most points
 end 
 
 def player_with_the_longest_name #returns player with the longest name 
-  def longest_name  #returns the #rebounds for the player with largest shoe size
  longest_name_array = []
  game_hash.each do |location, team_data|
    team_data.each do |team_attribute_keys, team_attributes |
@@ -274,5 +273,5 @@ def player_with_the_longest_name #returns player with the longest name
  end
  return longest_name_array.max_by(&:length)
 end
-end 
+
 
