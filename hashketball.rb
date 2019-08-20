@@ -258,7 +258,7 @@ def winning_team #returns the NAME of team with the most points
   end
 end 
 
-def player_with_the_longest_name #returns player with the longest name 
+def player_with_longest_name #returns player with the longest name 
  longest_name_array = []
  game_hash.each do |location, team_data|
    team_data.each do |team_attribute_keys, team_attributes |
