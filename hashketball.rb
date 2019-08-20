@@ -222,5 +222,7 @@ player = game_hash[:away][:players][3].keys
 return player[0]
 end
 
-
+def winning_team #returns the team with the most points 
+  
+end 
 
