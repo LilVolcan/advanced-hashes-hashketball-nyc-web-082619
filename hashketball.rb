@@ -274,7 +274,7 @@ def player_with_longest_name #returns player with the longest name
  return longest_name_array.max_by(&:length)
 end
 
-def long_name_steals_a_ton
+def long_name_steals_a_ton?
   
 end 
 
