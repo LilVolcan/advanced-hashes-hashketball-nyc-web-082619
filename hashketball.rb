@@ -274,9 +274,26 @@ def player_with_longest_name #returns player with the longest name
  return longest_name_array.max_by(&:length)
 end
 
-def long_name_steals_a_ton?
+def long_name_steals_a_ton? 
+ steals_array = []
+ game_hash.each do |location, team_data|
+   team_data.each do |team_attribute_keys, team_attributes |
+     if team_attribute_keys == :players
+       team_attributes.each do |player_hash|
+         player_hash.each do |player, stats_hash|
+           steals_array << stats_hash.fetch(:steals).to_i
+         end
+       end
+     end
+   end
+ end
+ most_steals = steals_array.max
+ player_index = steals_array.index(most_steals)
+  player = game_hash[:away][:players][1].keys[0]
+ player == longest_name
+end
   
-end 
+ 
 
 
 
