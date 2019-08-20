@@ -290,7 +290,7 @@ def long_name_steals_a_ton?
  most_steals = steals_array.max
  player_index = steals_array.index(most_steals)
   player = game_hash[:away][:players][1].keys[0]
- player == longest_name
+ player == player_with_longest_name
 end
   
  
