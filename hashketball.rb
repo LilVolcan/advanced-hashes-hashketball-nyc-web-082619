@@ -222,7 +222,7 @@ player = game_hash[:away][:players][3].keys
 return player[0]
 end
 
-def winning_team #returns the team with the most points 
+def winning_team #returns the NAME of team with the most points 
   home_points_array = []
   away_points_array = []
   game_hash.each do |location, team_data|
@@ -249,8 +249,12 @@ def winning_team #returns the team with the most points
         end
       end
       away_total_points = away_points_array.reduce(0){ |total, num| total + num }  
-      return [home_total_points, away_total_points].max
+      if home_total_points > away_total_points
+        return game_hash[:home][:team_name]
+        else
+        return game_hash[:away][:team_name]
+        end 
     end
   end
-end  
+end 
 
