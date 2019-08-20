@@ -203,7 +203,22 @@ def big_shoe_rebounds #returns the #rebounds for the player with largest shoe si
  return game_hash[:home][:players][player_index][player[0]][:rebounds].to_i
 end
 
-def most_points_scored
-  
-end 
+def most_points_scored #returns the name of player with most points
+  points_array = []
+  game_hash.each do |location, team_data|
+  team_data.each do |team_attribute_keys, team_attributes |
+    if team_attribute_keys == :players
+      team_attributes.each do |player_hash|
+        player_hash.each do |player, stats_hash|
+          points_array << stats_hash.fetch(:points).to_i
+         end        
+       end       
+     end    
+   end   
+  end 
+highest_points = points_array.max
+player_index = points_array.index(highest_points)
+return player = game_hash[:away][:players][3].keys
+
+end
 
