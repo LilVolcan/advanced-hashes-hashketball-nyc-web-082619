@@ -218,7 +218,7 @@ def most_points_scored #returns the name of player with most points
   end 
 highest_points = points_array.max
 player_index = points_array.index(highest_points)
-return player = game_hash[:away][:players][3].keys
-
+player = game_hash[:away][:players][3].keys
+return player[0]
 end
 
